@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodbkam
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: gokul
+      MONGO_INITDB_ROOT_PASSWORD: gokul
+      MONGO_INITDB_DATABASE: kamdb
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/var/micro-data/mongodb/data/db
